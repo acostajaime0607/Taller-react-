@@ -3,6 +3,8 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
+import { Link } from "react-router-dom";
+
 export default function Header() {
   return (
     <Navbar bg="primary" expand="lg">
@@ -17,12 +19,14 @@ export default function Header() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="/content" style={{ color: "white" }}>
-              CONTENT
-            </Nav.Link>
-            <Nav.Link href="/create" style={{ color: "white" }}>
-              CREARTE
-            </Nav.Link>
+            <Link to={"/content"}>
+              <Nav.Item href="" style={{ color: "white", marginRight: "10px" }}>
+                CONTENT
+              </Nav.Item>
+            </Link>
+            <Link to={"/create"}>
+              <Nav.Item style={{ color: "white" }}>CREARTE</Nav.Item>
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
